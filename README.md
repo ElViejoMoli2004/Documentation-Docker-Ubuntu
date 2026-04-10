@@ -1,6 +1,6 @@
 # 🐳 Instalación de Docker en Ubuntu
 
-Este documento describe los pasos para instalar Docker correctamente en Ubuntu desde el repositorio oficial.
+Este documento describe los pasos para instalar Docker correctamente en Ubuntu desde el repositorio oficial. Documentado el 09/04/2026.
 
 ---
 
