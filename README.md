@@ -42,8 +42,10 @@ Antes de comenzar, asegúrate de cumplir con los siguientes requisitos:
 ## 🔧 1. Eliminar versiones antiguas (opcional pero recomendado)
 
 ```bash
-sudo apt remove -y docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc
+sudo apt purge -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras 
 ```
+
+![Eliminar versiones antiguas](./screenshots/Eliminar.png)
 
 ---
 
@@ -54,6 +56,8 @@ sudo apt update
 sudo apt install -y ca-certificates curl
 ```
 
+![Instalar certificados](./screenshots/Certificado.png)
+
 ---
 
 ## 🔐 3. Agregar la clave GPG oficial de Docker
@@ -63,6 +67,8 @@ sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 ```
+
+![Agregar clave GPG](./screenshots/Clave.png)
 
 ---
 
@@ -83,6 +89,8 @@ echo \
 >   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 > ```
 
+![Agregar repositorio Docker](./screenshots/Repositorio.png)
+
 ---
 
 ## 📥 5. Instalar Docker
@@ -92,6 +100,8 @@ sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
+![Instalación de Docker](./screenshots/Instalacion.png)
+
 ---
 
 ## ✅ 6. Verificar instalación
@@ -100,8 +110,7 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 sudo docker run hello-world
 ```
 
-<!-- SCREENSHOT: Aquí agrega una captura mostrando el mensaje "Hello from Docker!" -->
-<!-- ![Verificación Docker](./screenshots/hello-world.png) -->
+![Primera verificación con sudo](./screenshots/Primera.png)
 
 ---
 
@@ -113,14 +122,15 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 
+![Configurar grupo Docker](./screenshots/Grupo.png)
+
 Luego verifica nuevamente:
 
 ```bash
 docker run hello-world
 ```
 
-<!-- SCREENSHOT: Captura ejecutando docker sin sudo -->
-<!-- ![Docker sin sudo](./screenshots/docker-sin-sudo.png) -->
+![Segunda verificación sin sudo](./screenshots/Segunda.png)
 
 ---
 
